@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NAIMUL ISLAM</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body,html{
+  height:100%;
+  overflow:hidden;
+}
+
+/* ENTER PAGE */
+#enterPage{
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:black;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* glow button */
+.enter-btn{
+  padding:18px 60px;
+  font-size:22px;
+  border:none;
+  border-radius:30px;
+  color:white;
+  cursor:pointer;
+  background:linear-gradient(45deg,#00f0ff,#0077ff);
+  box-shadow:0 0 20px #00f0ff,0 0 40px #0077ff;
+  transition:0.3s;
+}
+
+.enter-btn:hover{
+  transform:scale(1.1);
+  box-shadow:0 0 60px #00f0ff;
+}
+
+/* MAIN */
+#mainPage{
+  display:none;
+  height:100%;
+}
+
+/* VIDEO */
+video{
+  position:fixed;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:-2;
+}
+
+/* OVERLAY */
+.overlay{
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,20,0.6);
+  backdrop-filter:blur(2px);
+  z-index:-1;
+}
+
+/* CARD */
+.container{
+  height:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.card{
+  width:320px;
+  padding:25px;
+  border-radius:25px;
+  text-align:center;
+  color:white;
+
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(25px);
+
+  box-shadow:
+    0 0 20px rgba(0,255,255,0.4),
+    0 0 60px rgba(0,150,255,0.3);
+}
+
+/* profile */
+.card img{
+  width:95px;
+  height:95px;
+  border-radius:50%;
+  border:3px solid #00f0ff;
+  box-shadow:0 0 25px #00f0ff;
+  margin-bottom:10px;
+}
+
+/* text */
+.card h2{
+  font-size:28px;
+  text-shadow:0 0 10px #00f0ff;
+}
+
+.card p{
+  font-size:14px;
+  opacity:0.85;
+}
+
+/* ICONS */
+.icons{
+  margin-top:20px;
+}
+
+.icons a{
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+
+  width:55px;
+  height:55px;
+  margin:10px;
+
+  border-radius:15px;
+  font-size:24px;
+  color:white;
+
+  background:rgba(255,255,255,0.1);
+  transition:0.3s;
+}
+
+.icons a:hover{
+  transform:scale(1.2);
+}
+
+/* color glow */
+.fb:hover{background:#1877f2; box-shadow:0 0 25px #1877f2;}
+.wa:hover{background:#25d366; box-shadow:0 0 25px #25d366;}
+.dc:hover{background:#5865f2; box-shadow:0 0 25px #5865f2;}
+.tt:hover{background:#000; box-shadow:0 0 25px #ff0050;}
+
+/* glow text */
+.glow{
+  position:absolute;
+  width:100%;
+  text-align:center;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:50px;
+  color:white;
+  opacity:0.05;
+  letter-spacing:6px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ENTER -->
+<div id="enterPage">
+  <button class="enter-btn" onclick="enterSite()">ENTER</button>
+</div>
+
+<!-- MAIN -->
+<div id="mainPage">
+
+  <!-- VIDEO WITH SOUND -->
+  <video id="bgVideo" loop>
+    <source src="your-video.mp4" type="video/mp4">
+  </video>
+
+  <div class="overlay"></div>
+  <div class="glow">NAIMUL ISLAM</div>
+
+  <div class="container">
+    <div class="card">
+
+      <img src="yourpic.png">
+
+      <h2>Ɲᴀɪᴍᴜʟ Islam 👑 !!</h2>
+      <p>🚀 Panel Maker | 💻 Web Developer | 🤖 Bot Developer</p>
+      <p>I create modern & responsive admin panels, hosting dashboards, and powerful Discord bots.</p>
+
+      <div class="icons">
+
+  <a href="https://www.facebook.com/naimul.islam.241272" target="_blank" class="fb">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+
+  <a href="https://wa.me/8801892696902" target="_blank" class="wa">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <a href="https://discord.com/users/1260572548274327577" target="_blank" class="dc">
+    <i class="fab fa-discord"></i>
+  </a>
+
+  <a href="https://www.tiktok.com/@xanos1219?_r=1&_t=ZS-94nFuABsyWO" target="_blank" class="tt">
+    <i class="fab fa-tiktok"></i>
+  </a>
+
+</div>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+function enterSite(){
+  document.getElementById("enterPage").style.display="none";
+  document.getElementById("mainPage").style.display="block";
+
+  let video = document.getElementById("bgVideo");
+  video.muted = false;   // sound on
+  video.play();
+}
+</script>
+
+</body>
+</html>
